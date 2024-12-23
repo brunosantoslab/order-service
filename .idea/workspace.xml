@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f34443bd-5210-4064-a55c-f50d512c1d65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/application/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/model/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/consumer/OrderConsumerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/controller/OrderControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/producer/OrderProducerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/service/OrderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/util/OrderTestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/domain/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/infrastructure/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/brunosantos/orderservice/infrastructure/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/producer/OrderProducerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/producer/OrderProducerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/service/OrderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/domain/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/domain/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/domain/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/domain/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/infrastructure/repository/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/brunosantos/orderservice/infrastructure/repository/OrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/producer/OrderProducerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/producer/OrderProducerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/repository/OrderRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/repository/OrderRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/service/OrderServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/app/brunosantos/orderservice/service/OrderServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +46,17 @@
     "JUnit.OrderRepositoryTest.executor": "Run",
     "JUnit.OrderServiceApplicationTests.executor": "Run",
     "JUnit.OrderServiceTest.executor": "Run",
+    "Karate.order-service.executor": "Run",
     "Maven.order-service [clean].executor": "Run",
     "Maven.order-service [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "ORD-1",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Karate.order-service">
-    <configuration name="OrderConsumerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="app.brunosantos.orderservice.consumer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="app.brunosantos.orderservice.consumer" />
-      <option name="MAIN_CLASS_NAME" value="app.brunosantos.orderservice.consumer.OrderConsumerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.OrderRepositoryTest">
     <configuration name="OrderControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-service" />
       <extension name="coverage">
@@ -80,6 +67,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="app.brunosantos.orderservice.application.controller" />
       <option name="MAIN_CLASS_NAME" value="app.brunosantos.orderservice.application.controller.OrderControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderProducerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.brunosantos.orderservice.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="app.brunosantos.orderservice.producer" />
+      <option name="MAIN_CLASS_NAME" value="app.brunosantos.orderservice.producer.OrderProducerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,16 +102,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.brunosantos.orderservice.*" />
+          <option name="PATTERN" value="app.brunosantos.orderservice.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="app.brunosantos.orderservice" />
-      <option name="MAIN_CLASS_NAME" value="app.brunosantos.orderservice.OrderServiceApplicationTests" />
+      <option name="PACKAGE_NAME" value="app.brunosantos.orderservice.service" />
+      <option name="MAIN_CLASS_NAME" value="app.brunosantos.orderservice.service.OrderServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderRepositoryTest" />
+        <item itemvalue="JUnit.OrderProducerTest" />
+        <item itemvalue="JUnit.OrderServiceTest" />
         <item itemvalue="Karate.order-service" />
         <item itemvalue="JUnit.OrderControllerTest" />
-        <item itemvalue="JUnit.OrderRepositoryTest" />
-        <item itemvalue="JUnit.OrderServiceApplicationTests" />
-        <item itemvalue="JUnit.OrderConsumerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -143,5 +145,26 @@
       <updated>1734899097367</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/app/brunosantos/orderservice/repository/OrderRepositoryTest.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

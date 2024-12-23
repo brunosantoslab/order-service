@@ -27,6 +27,12 @@ public class OrderService {
     }
 
     public void processOrder(Order order) {
+
+        // Check for duplicate orders based on orderCode
+        if (orderRepository.existsByOrderCode(order.getOrderCode())) {
+            throw new IllegalArgumentException("Duplicate order detected: Order Code " + order.getOrderCode());
+        }
+
         BigDecimal totalPrice = order.getProducts().stream()
             .map(product -> product.getPrice().multiply(BigDecimal.valueOf(product.getQuantity())))
             .reduce(BigDecimal.ZERO, BigDecimal::add);

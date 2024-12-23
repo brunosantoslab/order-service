@@ -16,6 +16,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String orderCode;
+
     @Column(nullable = false)
     private LocalDateTime createdAt;
 
@@ -38,6 +41,14 @@ public class Order {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getOrderCode() {
+        return orderCode;
+    }
+
+    public void setOrderCode(String orderCode) {
+        this.orderCode = orderCode;
     }
 
     public LocalDateTime getCreatedAt() {

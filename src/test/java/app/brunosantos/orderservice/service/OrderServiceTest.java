@@ -6,6 +6,8 @@ import app.brunosantos.orderservice.domain.model.Product;
 import app.brunosantos.orderservice.domain.service.OrderService;
 import app.brunosantos.orderservice.infrastructure.producer.OrderProducer;
 import app.brunosantos.orderservice.infrastructure.repository.OrderRepository;
+import app.brunosantos.orderservice.util.OrderTestUtils;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -36,10 +38,13 @@ class OrderServiceTest {
         MockitoAnnotations.openMocks(this);
 
         order = new Order();
+        order.setCreatedAt(LocalDateTime.now());
+        order.setOrderCode(OrderTestUtils.generateOrderCode(order));
         order.setProducts(List.of(
                 new Product("Product A", 2, new BigDecimal("10.00")),
                 new Product("Product B", 1, new BigDecimal("20.00"))
         ));
+
     }
 
     @Test
@@ -53,4 +58,5 @@ class OrderServiceTest {
         assertEquals(new BigDecimal("40.00"), order.getTotalPrice());
         assertEquals(OrderStatus.PROCESSED, order.getStatus());
     }
+
 }

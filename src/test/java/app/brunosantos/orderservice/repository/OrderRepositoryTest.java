@@ -3,6 +3,7 @@ package app.brunosantos.orderservice.repository;
 import app.brunosantos.orderservice.domain.model.Order;
 import app.brunosantos.orderservice.domain.model.OrderStatus;
 import app.brunosantos.orderservice.infrastructure.repository.OrderRepository;
+import app.brunosantos.orderservice.util.OrderTestUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -28,6 +29,7 @@ class OrderRepositoryTest {
         Order pendingOrder = new Order();
         pendingOrder.setTotalPrice(new BigDecimal("50.00"));
         pendingOrder.setCreatedAt(LocalDateTime.now());
+        pendingOrder.setOrderCode(OrderTestUtils.generateOrderCode(pendingOrder));
         pendingOrder.setStatus(OrderStatus.PENDING);
 
         orderRepository.save(pendingOrder);
@@ -36,6 +38,7 @@ class OrderRepositoryTest {
         Order processedOrder = new Order();
         processedOrder.setTotalPrice(new BigDecimal("100.00"));
         processedOrder.setCreatedAt(LocalDateTime.now());
+        processedOrder.setOrderCode(OrderTestUtils.generateOrderCode(processedOrder));
         processedOrder.setStatus(OrderStatus.PROCESSED);
 
         orderRepository.save(processedOrder);
@@ -52,4 +55,5 @@ class OrderRepositoryTest {
         assertEquals(OrderStatus.PROCESSED, processedOrders.get(0).getStatus());
         assertEquals(new BigDecimal("100.00"), processedOrders.get(0).getTotalPrice());
     }
+
 }

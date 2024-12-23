@@ -2,6 +2,8 @@ package app.brunosantos.orderservice.producer;
 
 import app.brunosantos.orderservice.domain.model.Order;
 import app.brunosantos.orderservice.infrastructure.producer.OrderProducer;
+import app.brunosantos.orderservice.util.OrderTestUtils;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -27,8 +29,11 @@ class OrderProducerTest {
     @Test
     void shouldPublishOrderToKafka() {
         Order order = new Order();
-        order.setId(1L);
+        order.setId(0L);
+        order.setCreatedAt(LocalDateTime.now());
+        order.setOrderCode(OrderTestUtils.generateOrderCode(order));
         orderProducer.publishProcessedOrder(order);
         verify(kafkaTemplate).send("orders-out", order);
     }
+
 }
