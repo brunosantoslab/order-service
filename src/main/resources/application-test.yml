@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-ctk7ajhopnds73fspjug-a.oregon-postgres.render.com:5432/orderdb_4trg
+    username: orderdb_4trg_user
+    password: ATBD5SRA6LbNmqzcAMALGGgB9MVxq3Hx
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
