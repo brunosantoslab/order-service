@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: orderdb_4trg_user
+      POSTGRES_PASSWORD: ATBD5SRA6LbNmqzcAMALGGgB9MVxq3Hx
+      POSTGRES_DB: orderdb_4trg
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+
+  order-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: order_service_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - kafka
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-ctk7ajhopnds73fspjug-a:5432/orderdb_4trg
+      SPRING_DATASOURCE_USERNAME: orderdb_4trg_user
+      SPRING_DATASOURCE_PASSWORD: ATBD5SRA6LbNmqzcAMALGGgB9MVxq3Hx
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+
+volumes:
+  postgres_data:
